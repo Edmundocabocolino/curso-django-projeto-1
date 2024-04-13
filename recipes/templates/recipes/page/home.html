@@ -1,22 +1,17 @@
-{% include "recipes/partials/head.html" %}
+{% extends "global/base.html" %}
+{% block title %}home|{% endblock title %}
 
-<body>
-  {% include "recipes/partials/header.html" %}
-  {% include "recipes/partials/search.html" %}
-  <main class="main-content-container">
-    <div class="main-content main-content-list container">
-      {% include "recipes/partials/recipes.html" %}
-      {% include "recipes/partials/recipes.html" %}
-      {% include "recipes/partials/recipes.html" %}
-      {% include "recipes/partials/recipes.html" %}
-      {% include "recipes/partials/recipes.html" %}
-      {% include "recipes/partials/recipes.html" %}
+{% block content %}
 
 
-    </div>
-  </main>
-
-  {% include "recipes/partials/footer.html" %}
-</body>
-
-</html>
+<div class="main-content main-content-list container">
+  {% include "recipes/partials/AMleao.html" %}
+  {% include "recipes/partials/AMcachorro.html" %}
+  {% include "recipes/partials/minimimpersonalizado.html" %}
+  {% include "recipes/partials/urso.html" %}
+  {% include "recipes/partials/dotora.html" %}
+  {% include "recipes/partials/shitzu.html" %}
+  {% include "recipes/partials/ovelhinha.html" %}    
+  
+</div>
+{% endblock content %}
