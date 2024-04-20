@@ -5,13 +5,8 @@
 
 
 <div class="main-content main-content-list container">
-  {% include "recipes/partials/AMleao.html" %}
-  {% include "recipes/partials/AMcachorro.html" %}
-  {% include "recipes/partials/minimimpersonalizado.html" %}
-  {% include "recipes/partials/urso.html" %}
-  {% include "recipes/partials/dotora.html" %}
-  {% include "recipes/partials/shitzu.html" %}
-  {% include "recipes/partials/ovelhinha.html" %}    
-  
+  {% for recipe in recipes %}
+    {% include "recipes/partials/recipe.html" %}
+  {% endfor %}
 </div>
 {% endblock content %}

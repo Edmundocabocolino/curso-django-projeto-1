@@ -1,28 +1,22 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from utils.recipes.factory import make_recipe
+from recipes.models import Recipe
+
+
+from .models import Recipe
 
 # Create your views here.
 def home(request):
-    return render(request,'recipes/page/home.html')
+    recipes = Recipe.objects.all().order_by('-id')
+    return render(request,'recipes/page/home.html',context={
+        'recipes':recipes,
+    })
 
 def recipeviews(request, id):
-    return render(request, "recipes/page/recipeviews.html")
+    return render(request, "recipes/page/recipe-views.html",context={
+        
+        'is_detail_page': True,
+    })
 
-def yorkshire(request, id):
-    return render(request, "recipes/page/cachorroview.html")
-
-def miniminviews(request, id):
-    return render(request, "recipes/page/miniminviews.html")
-
-def ursoviews(request, id):
-    return render(request, "recipes/page/ursoviews.html")
-
-def dotoraviews(request, id):
-    return render(request, "recipes/page/dotoraviews.html")
-
-def shitzuviews(request, id):
-    return render(request, "recipes/page/shitzuviews.html")
-
-def ovelhinhaviews(request, id):
-    return render(request, "recipes/page/ovelhinhaviews.html")
 
